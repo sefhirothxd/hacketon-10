@@ -493,26 +493,26 @@ function ejercicio15() {
 }
 
 function ejercicio16() {
-    let n = parseInt(prompt('Ingrese un numero para generar una matris que cuente desde este hasta 0'));
-    let array = [n];
+    let n = document.getElementById('input_16');
+    let container = document.getElementById('container-p16');
+    let array = [n.value];
 
-    for (let index = n; index >= 0; index--) {
+    for (let index = n.value; index >= 0; index--) {
         array[index] = index;
     }
 
-    console.log(array);
+    container.innerHTML = `Matris del numero ingresado ${array}`;
 }
 
 function ejercicio17() {
     let array = [10, 4, 1, 4, -10, -50, 32, 21]
-    alert(`tenemos la siguiente array: ${array}. \n se buscara el mayor y el menor de los numeros, y se calculara la diferencia.`);
-
+    let container = document.getElementById('container-p17');
     let mayor = Math.max(...array);
     let menor = Math.min(...array);
 
     let diferencia = mayor - menor;
 
-    alert(`La diferencia del mayor ${mayor} y el menor ${menor} es: ${diferencia}`);
+    container.innerHTML = `La diferencia del mayor ${mayor} y el menor ${menor} es: ${diferencia}`;
 
 }
 
@@ -520,32 +520,38 @@ function ejercicio18() {
 
     let array = [1, 2, 3, "x", "y", 10];
     let frace = [];
-    alert(`El array cuenta con la siguiente informacion : ${array}`);
+    let container = document.getElementById('container-p18');
     for (let index = 0; index < array.length; index++) {
         if (typeof(array[index]) !== 'string') {
             frace.push(array[index]);
         }
     }
 
-    alert(`Se filtro los String y solo queda : ${frace}`);
+    container.innerHTML = `Se filtro los String y solo queda : ${frace}`;
 
 }
 
 function ejercicio19() {
-    let numero = prompt(`ingrece el numero que desea que se repita: `);
-    let repetir = parseInt(prompt(`ingrece la cantidad de veces: `));
+    let numero = document.getElementById('input_19');
+    let repetir = document.getElementById('input_192');
+    let container = document.getElementById('container-p19');
+    let array = [];
 
-    alert(numero.repeat(repetir));
+    for (let index = 0; index <= repetir.value - 1; index++) {
+        array.push(numero.value);
+
+    }
+
+
+    container.innerHTML = `Numero :  ${array}`;
 
 
 }
 
 function ejercicio20() {
     let palabra = "apples and bananas"
+    let container = document.getElementById('container-p20');
     let acc = "";
-
-    alert(`Se tiene la siguiente frace: ${palabra}. Se procede a cambiar la volcal a por la e`)
-
     let array = Array.from(palabra);
 
     for (let index = 0; index < array.length; index++) {
@@ -556,15 +562,14 @@ function ejercicio20() {
 
     }
 
-    alert(acc);
+    container.innerHTML = `Resultado: ${acc}`;
 }
 
 function ejercicio21() {
     let palabra = "I am finding Nemo !"
     let modificado = palabra.split(' ');
     let acc = "";
-
-    alert(`se procede a cambiar la siguiente palabra: ${palabra}, y mantendremos  la palabra Nemo`);
+    let container = document.getElementById('container-p21');
 
     for (let index = 0; index < modificado.length; index++) {
         if (modificado[index] === 'Nemo') {
@@ -572,26 +577,27 @@ function ejercicio21() {
         }
     }
 
-    alert(`I found ${acc} at 4!`);
+    container.innerHTML = `I found ${acc} at 4!`;
 
 }
 
 function ejercicio22() {
 
-    let palabra = prompt(`Ingrese la palabra que desea agregarle mayuscula a la ultima letra.`)
+    let palabra = document.getElementById('input_22');
     let nueva = "";
-    let ultimo = palabra.charAt(palabra.length - 1);
+    let ultimo = palabra.value.charAt(palabra.value.length - 1);
+    let container = document.getElementById('container-p22');
 
-    for (let index = 0; index < palabra.length; index++) {
-        if (palabra.lastIndexOf(palabra.charAt(index)) === palabra.lastIndexOf(ultimo)) {
-            nueva += palabra.charAt(index).toUpperCase();
+    for (let index = 0; index < palabra.value.length; index++) {
+        if (palabra.value.lastIndexOf(palabra.value.charAt(index)) === palabra.value.lastIndexOf(ultimo)) {
+            nueva += palabra.value.charAt(index).toUpperCase();
             break;
         } else {
-            nueva += palabra.charAt(index);
+            nueva += palabra.value.charAt(index);
         }
 
     }
 
-    alert(nueva);
+    container.innerHTML = `${nueva}`;
 
 }

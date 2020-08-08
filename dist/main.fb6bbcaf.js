@@ -574,29 +574,30 @@ function ejercicio15() {
 }
 
 function ejercicio16() {
-  var n = parseInt(prompt('Ingrese un numero para generar una matris que cuente desde este hasta 0'));
-  var array = [n];
+  var n = document.getElementById('input_16');
+  var container = document.getElementById('container-p16');
+  var array = [n.value];
 
-  for (var index = n; index >= 0; index--) {
+  for (var index = n.value; index >= 0; index--) {
     array[index] = index;
   }
 
-  console.log(array);
+  container.innerHTML = "Matris del numero ingresado ".concat(array);
 }
 
 function ejercicio17() {
   var array = [10, 4, 1, 4, -10, -50, 32, 21];
-  alert("tenemos la siguiente array: ".concat(array, ". \n se buscara el mayor y el menor de los numeros, y se calculara la diferencia."));
+  var container = document.getElementById('container-p17');
   var mayor = Math.max.apply(Math, array);
   var menor = Math.min.apply(Math, array);
   var diferencia = mayor - menor;
-  alert("La diferencia del mayor ".concat(mayor, " y el menor ").concat(menor, " es: ").concat(diferencia));
+  container.innerHTML = "La diferencia del mayor ".concat(mayor, " y el menor ").concat(menor, " es: ").concat(diferencia);
 }
 
 function ejercicio18() {
   var array = [1, 2, 3, "x", "y", 10];
   var frace = [];
-  alert("El array cuenta con la siguiente informacion : ".concat(array));
+  var container = document.getElementById('container-p18');
 
   for (var index = 0; index < array.length; index++) {
     if (typeof array[index] !== 'string') {
@@ -604,19 +605,26 @@ function ejercicio18() {
     }
   }
 
-  alert("Se filtro los String y solo queda : ".concat(frace));
+  container.innerHTML = "Se filtro los String y solo queda : ".concat(frace);
 }
 
 function ejercicio19() {
-  var numero = prompt("ingrece el numero que desea que se repita: ");
-  var repetir = parseInt(prompt("ingrece la cantidad de veces: "));
-  alert(numero.repeat(repetir));
+  var numero = document.getElementById('input_19');
+  var repetir = document.getElementById('input_192');
+  var container = document.getElementById('container-p19');
+  var array = [];
+
+  for (var index = 0; index <= repetir.value - 1; index++) {
+    array.push(numero.value);
+  }
+
+  container.innerHTML = "Numero :  ".concat(array);
 }
 
 function ejercicio20() {
   var palabra = "apples and bananas";
+  var container = document.getElementById('container-p20');
   var acc = "";
-  alert("Se tiene la siguiente frace: ".concat(palabra, ". Se procede a cambiar la volcal a por la e"));
   var array = Array.from(palabra);
 
   for (var index = 0; index < array.length; index++) {
@@ -627,14 +635,14 @@ function ejercicio20() {
     acc += array[index];
   }
 
-  alert(acc);
+  container.innerHTML = "Resultado: ".concat(acc);
 }
 
 function ejercicio21() {
   var palabra = "I am finding Nemo !";
   var modificado = palabra.split(' ');
   var acc = "";
-  alert("se procede a cambiar la siguiente palabra: ".concat(palabra, ", y mantendremos  la palabra Nemo"));
+  var container = document.getElementById('container-p21');
 
   for (var index = 0; index < modificado.length; index++) {
     if (modificado[index] === 'Nemo') {
@@ -642,24 +650,25 @@ function ejercicio21() {
     }
   }
 
-  alert("I found ".concat(acc, " at 4!"));
+  container.innerHTML = "I found ".concat(acc, " at 4!");
 }
 
 function ejercicio22() {
-  var palabra = prompt("Ingrese la palabra que desea agregarle mayuscula a la ultima letra.");
+  var palabra = document.getElementById('input_22');
   var nueva = "";
-  var ultimo = palabra.charAt(palabra.length - 1);
+  var ultimo = palabra.value.charAt(palabra.value.length - 1);
+  var container = document.getElementById('container-p22');
 
-  for (var index = 0; index < palabra.length; index++) {
-    if (palabra.lastIndexOf(palabra.charAt(index)) === palabra.lastIndexOf(ultimo)) {
-      nueva += palabra.charAt(index).toUpperCase();
+  for (var index = 0; index < palabra.value.length; index++) {
+    if (palabra.value.lastIndexOf(palabra.value.charAt(index)) === palabra.value.lastIndexOf(ultimo)) {
+      nueva += palabra.value.charAt(index).toUpperCase();
       break;
     } else {
-      nueva += palabra.charAt(index);
+      nueva += palabra.value.charAt(index);
     }
   }
 
-  alert(nueva);
+  container.innerHTML = "".concat(nueva);
 }
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
