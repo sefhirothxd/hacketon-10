@@ -1,0 +1,56 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.main {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.principal-title {
+    text-align: center;
+}
+
+
+/*problemas*/
+
+.problema-item {
+    margin-bottom: 20px;
+}
+
+.problema-item {
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid red;
+}
+
+.container-inputs {
+    display: none;
+}
+
+
+/* fin */
+
+.entrada {
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.btn-ejecturar {
+    background-color: blue;
+    color: white;
+}
+
+.btn-ejecturar:active {
+    background-color: white;
+    color: black;
+}
