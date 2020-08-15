@@ -2,8 +2,26 @@ html {
     font-size: 62.5%;
 }
 
-body {
+* {
     box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#21c08b, #ab88ff);
+    font-family: 'Comic Neue', cursive;
+}
+
+input {
+    background: transparent;
+    border: 1px solid black;
+}
+
+::placeholder:focus {
+    color: black;
+}
+
+input:focus {
+    outline: none;
 }
 
 .main {
@@ -25,7 +43,7 @@ body {
 .problema-item {
     padding: 20px;
     border-radius: 20px;
-    border: 2px solid red;
+    border: 2px solid white;
 }
 
 .container-inputs {
@@ -53,4 +71,13 @@ body {
 .btn-ejecturar:active {
     background-color: white;
     color: black;
+}
+
+.title-problem {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.p-problem {
+    font-size: 1.4rem;
 }
